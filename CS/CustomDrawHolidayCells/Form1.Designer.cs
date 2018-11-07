@@ -27,12 +27,12 @@ namespace CustomDrawHolidayCells {
 			DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
 			DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
 			this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
-			this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+			this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
 			this.btnAddHoliday = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
 			this.SuspendLayout();
@@ -45,7 +45,7 @@ namespace CustomDrawHolidayCells {
 			this.schedulerControl1.Name = "schedulerControl1";
 			this.schedulerControl1.Size = new System.Drawing.Size(775, 488);
 			this.schedulerControl1.Start = new System.DateTime(2008, 8, 18, 0, 0, 0, 0);
-			this.schedulerControl1.Storage = this.schedulerStorage1;
+			this.schedulerControl1.DataStorage = this.schedulerDataStorage1;
 			this.schedulerControl1.TabIndex = 0;
 			this.schedulerControl1.Text = "schedulerControl1";
 			this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
@@ -66,6 +66,7 @@ namespace CustomDrawHolidayCells {
 			this.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Right;
 			this.dateNavigator1.Location = new System.Drawing.Point(775, 51);
 			this.dateNavigator1.Name = "dateNavigator1";
+            this.dateNavigator1.CellPadding = new System.Windows.Forms.Padding(2);
 			this.dateNavigator1.SchedulerControl = this.schedulerControl1;
 			this.dateNavigator1.Size = new System.Drawing.Size(179, 488);
 			this.dateNavigator1.TabIndex = 2;
@@ -89,10 +90,11 @@ namespace CustomDrawHolidayCells {
 			this.Controls.Add(this.schedulerControl1);
 			this.Controls.Add(this.dateNavigator1);
 			this.Controls.Add(this.panel1);
-			this.Name = "Form1";
-			this.Text = "How to paint holiday cells";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "Form1";
+			this.Text = "How to paint holiday cells with different color";
 			((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
 			this.ResumeLayout(false);
@@ -102,7 +104,7 @@ namespace CustomDrawHolidayCells {
 		#endregion
 
 		private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
-		private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+		private DevExpress.XtraScheduler.SchedulerDataStorage schedulerDataStorage1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button btnAddHoliday;
 		private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
